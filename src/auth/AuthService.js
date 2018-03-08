@@ -73,7 +73,7 @@ export default class AuthService {
   }
 
   getRole () {
-    const namespace = 'http://myapp.example.com'
+    const namespace = AUTH_CONFIG.namespace
     const idToken = localStorage.getItem('id_token')
     if (idToken) {
       var role = decode(idToken)[`${namespace}/role`] || null
@@ -83,7 +83,7 @@ export default class AuthService {
   }
 
   getMemberId () {
-    const namespace = 'http://myapp.example.com'
+  const namespace = AUTH_CONFIG.namespace
     const idToken = localStorage.getItem('id_token')
     if (idToken) {
       var memberid = decode(idToken)[`${namespace}/memberid`] || null
@@ -93,7 +93,7 @@ export default class AuthService {
   }
 
   getNickName () {
-    const namespace = 'http://myapp.example.com'
+  const namespace = AUTH_CONFIG.namespace
     const idToken = localStorage.getItem('id_token')
     if (idToken) {
       var nick = decode(idToken)[`${namespace}/nickname`] || null
@@ -103,6 +103,6 @@ export default class AuthService {
   }
 
   isAdmin () {
-    return this.getRole() === 'ROLE_SERVICE_PROVIDER'
+    return this.getRole() ===  AUTH_CONFIG.adminRole
   }
 }
