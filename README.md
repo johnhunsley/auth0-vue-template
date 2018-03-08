@@ -1,8 +1,8 @@
 # auth0-vue-template
-A Vue.js template for Auth0 integration.
+A Vue.js template for [Auth0](https://auth0.com/)  integration.
 
-Auth0 is an identity provider service against which authentication and authorization challenges can be made using OAuth.
-Auth0 plays the part of the remote token provider and provides a Json Web Token (JWT) which contains both the identity and
+[Auth0](https://auth0.com/) is an identity provider service against which authentication and authorization challenges can be made using OAuth.
+[Auth0](https://auth0.com/)  plays the part of the remote token provider and provides a Json Web Token (JWT) which contains both the identity and
 granted authorities of that identity. This project is a Vue.js template which can be used to create new Single Page App
 views in Vue.js which require user authenitcation and authorization via Auth0 for access to the underlying resource provider,
 whatever that may be.
@@ -37,6 +37,17 @@ app.use(function(req, res, next) {
  ```
 
 To run this example:
+
+First edit the src/auth/auth0-variables.js file and add your Auth0 details, overwrite the placeholders in braces
+
+```
+export const AUTH_CONFIG = {
+  clientId: '{CLIENT_ID}',
+  domain: '{DOMAIN}',
+  callbackUrl: '{CALLBACK_URL}',
+  apiUrl: '{API_IDENTIFIER}'
+}
+```
 
 ```
 npm install
